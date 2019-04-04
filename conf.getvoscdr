@@ -1,0 +1,6 @@
+cdr-source:/home/billing/voscdr/
+billing-server:103.245.141.60
+billing-server-port:22
+billing-server-dir:/home/user/rawcdr/sw002csv/
+billing-server-user:user
+billing-server-pass:@lpha7$Igm@1

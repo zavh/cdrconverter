@@ -1,0 +1,812 @@
+<?xml version="1.0"?>
+<huaweicdrdef>
+<field name="csn" length="4" offset="0" fractionbit="0" separatedchunks="0" reversed="1" conversion="V" value="db" date="0" bcd="0" >
+</field>
+
+<field name="length" length="2" offset="4" fractionbit="0" separatedchunks="0" reversed="1" conversion="v" value="constant" date="0" bcd="0" >
+</field>
+
+<field name="net_type" length="1" offset="6" fractionbit="0" separatedchunks="0" definition="1" reversed="1" conversion="C" value="constant" date="0" bcd="0">
+	<valuedef value="11">fixed network bill</valuedef>
+	<valuedef value="12">mobile network bill</valuedef>
+</field>
+
+<field name="bill_type" length="1" offset="7" fractionbit="0" separatedchunks="0" definition="1" conversion="C" value="constant" date="0" bcd="0"> 
+	<valuedef value='1'>Detailed ticket</valuedef>
+	<valuedef value='255'>Warn ticket</valuedef>
+	<valuedef value='85'>Failed call ticket</valuedef>
+</field>
+
+<field name="check_sum" length="1" offset="8" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0"> 
+</field>
+
+<field name="fractionbit1" length="1" offset="9" fractionbit="1" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+	<fractiondef name="partial_record_indicator" position="-4" bit="4" definition="1">
+			<valuedef value='0'>single record</valuedef>
+			<valuedef value='1'>the first part of record</valuedef>
+			<valuedef value='2'>the intermediate part of record</valuedef>
+			<valuedef value='3'>the last part of record</valuedef>
+			<valuedef value='4'>single record for multi-record bill</valuedef>
+	</fractiondef>
+        <fractiondef name="valid_indicator" position="-5" bit="1" definition="1"> 
+			<valuedef value='0'>valid</valuedef>
+                        <valuedef value='1'>invalid</valuedef>
+        </fractiondef>
+        <fractiondef name="clock_indicator" position="-6" bit="1" definition="1">
+                        <valuedef value='0'>Yes</valuedef>
+                        <valuedef value='1'>No</valuedef>
+        </fractiondef>
+        <fractiondef name="free_indicator" position="-7" bit="1" definition="1">
+                        <valuedef value='0'>free of charge</valuedef>
+                        <valuedef value='1'>charging</valuedef>
+        </fractiondef>
+        <fractiondef name="call_attempt_indicator" position="-8" bit="1" definition="1">
+                        <valuedef value='0'>free call attempt</valuedef>
+                        <valuedef value='1'>charged call attempt</valuedef>
+        </fractiondef>
+</field>
+
+<field name="fractionbit2" length="1" offset="10" fractionbit="1" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+        <fractiondef name="complain_indicator" position="-1" bit="1" definition="1"> 
+                        <valuedef value='0'>no complaint</valuedef>
+                        <valuedef value='1'>complaint</valuedef>
+        </fractiondef>
+        <fractiondef name="cama_indicator" position="-2" bit="1" definition="1">
+                        <valuedef value='0'>non-centralized charging</valuedef>
+                        <valuedef value='1'>centralized charging</valuedef>
+	</fractiondef>
+        <fractiondef name="is_credit_indicator" position="-3" bit="1" definition="1">
+                        <valuedef value='0'>non-credit call</valuedef>
+                        <valuedef value='1'>credit call</valuedef>
+        </fractiondef>
+        <fractiondef name="hot_bill_flag" position="-4" bit="1" definition="1">
+                        <valuedef value='1'>Yes</valuedef>
+                        <valuedef value='0'>No</valuedef>
+        </fractiondef>
+        <fractiondef name="charge_party_indicator" position="-8" bit="4" definition="1">
+                        <valuedef value='0'>free of charge</valuedef>
+                        <valuedef value='1'>charging the calling party</valuedef>
+			<valuedef value='2'>charging the called party</valuedef>
+			<valuedef value='3'>charging the destination address number (used in IN)</valuedef>
+			<valuedef value='4'>third party charged</valuedef>
+			<valuedef value='9'>charging incoming trunk</valuedef>
+			<valuedef value='10'>charging outgoing trunk</valuedef>
+			<valuedef value='11'>charging calling party (third party charged)</valuedef>
+			<valuedef value='12'>charging called party (third party charged)</valuedef>
+			<valuedef value='13'>charging incoming trunk (third party charged</valuedef>
+			<valuedef value='14'>charging outgoing trunk (third party charged</valuedef>
+			<valuedef value='15'>no charging</valuedef>
+        </fractiondef>
+</field>
+
+<field name="ans_time" length="6" offset="11" fractionbit="0" separatedchunks="1" date="1" conversion="sp" value="db" bcd="0">
+</field>
+
+<field name="end_time" length="6" offset="17" fractionbit="0" separatedchunks="1" date="1" conversion="sp" value="db" bcd="0">
+</field>
+
+<field name="conversation_time" length="4" offset="23" fractionbit="0" separatedchunks="0" reversed="1" conversion="V" value="db" date="0" bcd="0">
+</field>
+
+<field name="caller_dnset" length="2" offset="27" fractionbit="0" separatedchunks="0" reversed="1" conversion="v" value="constant" date="0" bcd="0">
+</field>
+
+<field name="caller_address_nature" length="1" offset="29" fractionbit="0" separatedchunks="0" definition="1" conversion="C" value="constant" date="0" bcd="0">
+        <valuedef value='0'>Subscriber number</valuedef>
+        <valuedef value='1'>Spared</valuedef>
+        <valuedef value='2'>Domestic valid number</valuedef>
+        <valuedef value='3'>International number</valuedef>
+	<valuedef value='255'>Unknown</valuedef>
+</field>
+
+<field name="caller_number" length="16" offset="30" fractionbit="0" separatedchunks="0" bcd="1" conversion="bcd" value="db" date="0">
+</field>
+
+<field name="called_dnset" length="2" offset="46" fractionbit="0" separatedchunks="0" reversed="1" conversion="v" value="constant" date="0" bcd="0">
+</field>
+
+<field name="called_address_nature" length="1" offset="48" fractionbit="0" separatedchunks="0" definition="1" reversed="1" conversion="C" value="constant" date="0" bcd="0">
+        <valuedef value='0'>Subscriber number</valuedef>
+        <valuedef value='2'>domestic valid number</valuedef>
+        <valuedef value='3'>International number</valuedef>
+	<valuedef value='7'>Reserved for extension</valuedef>
+        <valuedef value='255'>Unknown</valuedef>
+</field>
+
+<field name="called_number" length="16" offset="49" fractionbit="0" separatedchunks="0" bcd="1" conversion="bcd" value="db" date="0">
+</field>
+
+<field name="centrex_group_number" length="2" offset="65" fractionbit="0" separatedchunks="0" reversed="1" conversion="v" value="constant" date="0" bcd="0">
+</field>
+
+<field name="caller_ctx_number" length="5" offset="67" fractionbit="0" separatedchunks="0" bcd="1" conversion="bcd" value="constant" date="0">
+</field>
+
+<field name="called_ctx_number" length="5" offset="72" fractionbit="0" separatedchunks="0" bcd="1" conversion="bcd" value="constant" date="0">
+</field>
+
+<field name="trunk_group_in" length="2" offset="77" fractionbit="0" separatedchunks="0" reversed="1" conversion="v" value="db" date="0" bcd="0">
+</field>
+
+<field name="trunk_group_out" length="2" offset="79" fractionbit="0" separatedchunks="0" reversed="1" conversion="v" value="db" date="0" bcd="0">
+</field>
+
+<field name="caller_did" length="1" offset="81" fractionbit="0" separatedchunks="0" reversed="1" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="called_did" length="1" offset="82" fractionbit="0" separatedchunks="0" reversed="1" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="caller_category" length="1" offset="83" fractionbit="0" separatedchunks="0" reversed="1" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="called_category" length="1" offset="84" fractionbit="0" separatedchunks="0" reversed="1" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="fractionbit3" length="1" offset="85" fractionbit="1" separatedchunks="0" conversion="C" value="db" date="0" bcd="0">
+        <fractiondef name="call_type" position="-4" bit="4" definition="1">
+		<valuedef value='1'>intra-office</valuedef>
+		<valuedef value='2'>incoming office</valuedef>
+		<valuedef value='3'>outgoing office</valuedef>
+		<valuedef value='4'>tandem</valuedef>
+        </fractiondef>
+        <fractiondef name="terminating_reason" position="-8" bit="4" definition="1">
+		<valuedef value='0'>caller party release</valuedef>
+                <valuedef value='1'>called party release</valuedef>
+                <valuedef value='2'>inter release</valuedef>
+                <valuedef value='3'>peer caller release</valuedef>
+                <valuedef value='4'>peer called release</valuedef>
+		<valuedef value='5'>Maintenance release</valuedef>
+        </fractiondef>
+</field>
+
+<field name="gsvn" length="1" offset="86" fractionbit="0" separatedchunks="0" reversed="1" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="terminating_code" length="1" offset="87" fractionbit="0" separatedchunks="0" reversed="1" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="CallerSrc" length="2" offset="88" fractionbit="0" separatedchunks="0" reversed="1" conversion="v" value="constant" date="0" bcd="0">
+</field>
+
+<field name="CalledSrc" length="2" offset="90" fractionbit="0" separatedchunks="0" reversed="1" conversion="v" value="constant" date="0" bcd="0">
+</field>
+
+<field name="supplementary_service_type" length="2" offset="92" fractionbit="0" separatedchunks="0" reversed="1" conversion="v" value="constant" date="0" bcd="0">
+</field>
+
+<field name="charging_case" length="2" offset="94" fractionbit="0" separatedchunks="0" reversed="1" conversion="v" value="constant" date="0" bcd="0">
+</field>
+
+<field name="pulse_count" length="4" offset="96" fractionbit="0" separatedchunks="0" reversed="1" conversion="V" value="constant" date="0" bcd="0">
+</field>
+
+<field name="connected_dnset" length="2" offset="100" fractionbit="0" separatedchunks="0" reversed="1" conversion="v" value="constant" date="0" bcd="0">
+</field>
+
+<field name="connected_address_nature" length="1" offset="102" fractionbit="0" separatedchunks="0" definition="1" conversion="C" value="constant" date="0" bcd="0">
+	<valuedef value='0'>Subscriber number</valuedef>
+	<valuedef value='2'>domestic valid number</valuedef>
+	<valuedef value='3'>international number</valuedef>
+	<valuedef value='7'>Reserved for extension</valuedef>
+	<valuedef value='255'>Unknown</valuedef>
+</field>
+
+<field name="connected_number" length="16" offset="103" fractionbit="0" separatedchunks="0" bcd="1" conversion="bcd" value="db" date="0">
+</field>
+
+<field name="charge_dnset" length="2" offset="119" fractionbit="0" separatedchunks="0" reversed="1" conversion="v" value="constant" date="0" bcd="0">
+</field>
+
+<field name="charge_address_nature" length="1" offset="121" fractionbit="0" separatedchunks="0" definition="1" conversion="C" value="constant" date="0" bcd="0">
+	<valuedef value='255'>Reserved</valuedef>
+</field>
+
+<field name="charge_number" length="16" offset="122" fractionbit="0" separatedchunks="0" bcd="1" conversion="bcd" value="constant" date="0">
+</field>
+
+<field name="bearer_service" length="1" offset="138" fractionbit="0" separatedchunks="0" definition="1" conversion="C" value="constant" date="0" bcd="0">
+	<valuedef value='11'>subgroup voice service</valuedef>
+</field>
+
+<field name="dial_number" length="16" offset="139" fractionbit="0" separatedchunks="0" bcd="1" conversion="bcd" value="db" date="0">
+</field>
+
+<field name="Partial_counter" length="1" offset="155" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Module_number" length="1" offset="156" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Local_csn" length="4" offset="157" fractionbit="0" separatedchunks="0" reversed="1" conversion="V" value="db" date="0" bcd="0">
+</field>
+
+<field name="Service_key" length="4" offset="161" fractionbit="0" separatedchunks="0" reversed="1" conversion="V" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Answering time 10ms value" length="1" offset="165" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Call end time 10ms value" length="1" offset="166" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Caller trunk CIC" length="2" offset="167" fractionbit="0" separatedchunks="0" reversed="1" conversion="v" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Called trunk CIC" length="2" offset="169" fractionbit="0" separatedchunks="0" reversed="1" conversion="v" value="constant" date="0" bcd="0">
+</field>
+
+<field name="fractionbit4" length="1" offset="171" fractionbit="1" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+        <fractiondef name="Connect flag" position="-1" bit="1" definition="1">
+		<valuedef value='0'>not connected</valuedef>
+		<valuedef value='1'>connected</valuedef>
+        </fractiondef>
+        <fractiondef name="Query SHLR failure flag" position="-2" bit="1" definition="1">
+		<valuedef value='0'>No</valuedef>
+		<valuedef value='1'>Yes</valuedef>
+        </fractiondef>
+        <fractiondef name="Reserved" position="-3" bit="1">
+        </fractiondef>
+	<fractiondef name="Answer flag" position="-4" bit="1" definition="1">
+		<valuedef value='0'>answer</valuedef>
+		<valuedef value='1'>no answer</valuedef>
+        </fractiondef>
+	<fractiondef name="SCP failure flag" position="-5" bit="1" definition="1">
+		<valuedef value='0'>NO</valuedef>
+		<valuedef value='1'>YES</valuedef>
+        </fractiondef>
+	<fractiondef name="AS fail flag" position="-6" bit="1" definition="1">
+		<valuedef value='0'>NO</valuedef>
+		<valuedef value='1'>YES</valuedef>
+        </fractiondef>
+	<fractiondef name="Caller VPN indicator" position="-7" bit="1">
+        </fractiondef>
+	<fractiondef name="Global Call Reference flag" position="-8" bit="1">
+        </fractiondef>
+</field>
+
+<field name="Route number" length="2" offset="172" fractionbit="0" separatedchunks="0" reversed="1" conversion="v" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Sub route number" length="2" offset="174" fractionbit="0" separatedchunks="0" reversed="1" conversion="v" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Incoming route identify number" length="2" offset="176" fractionbit="0" separatedchunks="0" reversed="1" conversion="v" value="db" date="0" bcd="0">
+</field>
+
+<field name="Outgoing route identify number" length="2" offset="178" fractionbit="0" separatedchunks="0" reversed="1" conversion="v" value="db" date="0" bcd="0">
+</field>
+
+<field name="Called centrex group number" length="2" offset="180" fractionbit="0" separatedchunks="0" reversed="1" conversion="v" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Release position" length="2" offset="182" fractionbit="0" separatedchunks="0" reversed="1" conversion="v" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Incoming trunk default number" length="13" offset="184" fractionbit="0" separatedchunks="0" bcd="1" conversion="bcd" value="constant" date="0">
+
+</field>
+
+<field name="Reserved-197" length="1" offset="197" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Reserved-198" length="1" offset="198" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Reserved-199" length="1" offset="199" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="CLI_rec_flux_H" length="4" offset="200" fractionbit="0" separatedchunks="0" reversed="1" conversion="V" value="constant" date="0" bcd="0">
+</field>
+
+<field name="CLI_rec_flux_L" length="4" offset="204" fractionbit="0" separatedchunks="0" reversed="1" conversion="V" value="constant" date="0" bcd="0">
+</field>
+
+<field name="CLI_snt_flux_H" length="4" offset="208" fractionbit="0" separatedchunks="0" reversed="1" conversion="V" value="constant" date="0" bcd="0">
+</field>
+
+<field name="CLI_snt_flux_L" length="4" offset="212" fractionbit="0" separatedchunks="0" reversed="1" conversion="V" value="constant" date="0" bcd="0">
+</field>
+
+<field name="CLD_rec_flux_H" length="4" offset="216" fractionbit="0" separatedchunks="0" reversed="1" conversion="V" value="constant" date="0" bcd="0">
+</field>
+
+<field name="CLD_rec_flux_L" length="4" offset="220" fractionbit="0" separatedchunks="0" reversed="1" conversion="V" value="constant" date="0" bcd="0">
+</field>
+
+<field name="CLD_snt_flux_H" length="4" offset="224" fractionbit="0" separatedchunks="0" reversed="1" conversion="V" value="constant" date="0" bcd="0">
+</field>
+
+<field name="CLD_snt_flux_L" length="4" offset="228" fractionbit="0" separatedchunks="0" reversed="1" conversion="V" value="constant" date="0" bcd="0">
+</field>
+
+<field name="IP Address of Caller GK or SoftSwitch" length="4" offset="232" fractionbit="0" separatedchunks="0" reversed="1" conversion="V" value="constant" date="0" bcd="0">
+</field>
+
+<field name="IP Address of Caller GW or Terminal" length="4" offset="236" fractionbit="0" separatedchunks="0" reversed="1" conversion="V" value="constant" date="0" bcd="0">
+</field>
+
+<field name="IP Address of Callee GK or SoftSwitch" length="4" offset="240" fractionbit="0" separatedchunks="0" reversed="1" conversion="V" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Ip ddress of Callee GW or Terminal" length="4" offset="244" fractionbit="0" separatedchunks="0" reversed="1" conversion="V" value="constant" date="0" bcd="0">
+</field>
+
+<field name="callerRoamIP" length="4" offset="248" fractionbit="0" separatedchunks="0" reversed="1" conversion="V" value="constant" date="0" bcd="0">
+</field>
+
+<field name="calledRoamIP" length="4" offset="252" fractionbit="0" separatedchunks="0" reversed="1" conversion="V" value="constant" date="0" bcd="0">
+</field>
+
+<field name="fractionbit5" length="1" offset="256" fractionbit="1" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+        <fractiondef name="callerRoamMode" position="-4" bit="4" definition="1">
+		<valuedef value='0'>No roam</valuedef>
+		<valuedef value='1'>Local roam</valuedef>
+		<valuedef value='2'>Roam within current province</valuedef>
+		<valuedef value='3'>National roam</valuedef>
+		<valuedef value='4'>International roam</valuedef>
+		<valuedef value='5'>Other Roam</valuedef>
+		<valuedef value='6'>unknown</valuedef>
+        </fractiondef>
+        <fractiondef name="calledRoamMode" position="-8" bit="4" definition="1">
+		<valuedef value='0'>No roam</valuedef>
+		<valuedef value='1'>Local roam</valuedef>
+		<valuedef value='2'>Roam within current province</valuedef>
+		<valuedef value='3'>National roam</valuedef>
+		<valuedef value='4'>International roam</valuedef>
+		<valuedef value='5'>Other Roam</valuedef>
+		<valuedef value='6'>unknown</valuedef> 
+        </fractiondef>
+</field>
+
+<field name="caller_local_dnset_before_change" length="2" offset="257" fractionbit="0" separatedchunks="0" reversed="1" conversion="v" value="constant" date="0" bcd="0">
+</field>
+
+<field name="caller_address_nature_before_change" length="1" offset="259" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="caller_number_before_change" length="16" offset="260" fractionbit="0" separatedchunks="0" bcd="1" conversion="bcd" value="db" date="0">
+</field>
+
+<field name="callee_local_dnset_before_change" length="2" offset="276" fractionbit="0" separatedchunks="0" reversed="1" conversion="v" value="constant" date="0" bcd="0">
+</field>
+
+<field name="callee_address_nature_before_change" length="1" offset="278" fractionbit="0" separatedchunks="0" reversed="1" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="called_number_before_change" length="16" offset="279" fractionbit="0" separatedchunks="0" bcd="1" conversion="bcd" value="db" date="0">
+</field>
+
+<field name="Ingress Media Gateway ID" length="32" offset="295" fractionbit="0" separatedchunks="0" reversed="1" conversion="string" value="db" date="0" bcd="0">
+</field>
+
+<field name="Egress Media Gateway ID" length="32" offset="327" fractionbit="0" separatedchunks="0" reversed="1" conversion="string" value="db" date="0" bcd="0">
+</field>
+
+<field name="caller_seize_duration" length="4" offset="359" fractionbit="0" separatedchunks="0" reversed="1" conversion="V" value="db" date="0" bcd="0">
+</field>
+
+<field name="called_seize_duration" length="4" offset="363" fractionbit="0" separatedchunks="0" reversed="1" conversion="V" value="db" date="0" bcd="0">
+</field>
+
+<field name="OPC" length="4" offset="367" fractionbit="0" separatedchunks="0" reversed="1" conversion="V" value="constant" date="0" bcd="0">
+</field>
+
+<field name="DPC" length="4" offset="371" fractionbit="0" separatedchunks="0" reversed="1" conversion="V" value="constant" date="0" bcd="0">
+</field>
+
+<field name="TMG_Circuits_seizure_time" length="6" offset="375" fractionbit="0" separatedchunks="0" reversed="1" conversion="string" value="constant" date="0" bcd="0">
+</field>
+
+<field name="TMG_Circuits_release_time" length="6" offset="375" fractionbit="0" separatedchunks="0" reversed="1" conversion="string" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Start Date and Time of Call Setup" length="6" offset="387" fractionbit="0" separatedchunks="1" date="1" conversion="sp" value="db" bcd="0">
+</field>
+
+<field name="call_setup_duration" length="4" offset="393" fractionbit="0" separatedchunks="0" reversed="1" conversion="V" value="db" date="0" bcd="0">
+</field>
+
+<field name="Incoming Route ID" length="16" offset="397" fractionbit="0" separatedchunks="0" reversed="1" conversion="string" value="db" date="0" bcd="0">
+</field>
+
+<field name="Outgoing Route ID" length="16" offset="413" fractionbit="0" separatedchunks="0" reversed="1" conversion="string" value="db" date="0" bcd="0">
+</field>
+
+<field name="Local_switch_name" length="32" offset="429" fractionbit="0" separatedchunks="0" reversed="1" conversion="string" value="constant" date="0" bcd="0">
+</field>
+
+<field name="localTimeZone" length="1" offset="461" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="CAC" length="3" offset="462" fractionbit="0" separatedchunks="0" bcd="1" conversion="bcd" value="constant" date="0">
+</field>
+
+<field name="PayerShortNumber" length="5" offset="465" fractionbit="0" separatedchunks="0" bcd="1" conversion="bcd" value="constant" date="0">
+</field>
+
+<field name="balance" length="4" offset="470" fractionbit="0" separatedchunks="0" reversed="1" conversion="V" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Ingress Media Gateway TimeZone" length="1" offset="474" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Ingress occupied Time Slot" length="1" offset="475" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Egress Media Gateway TimeZone" length="1" offset="476" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Egress occupied Time Slot" length="1" offset="477" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Caller Time Zone" length="1" offset="478" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Called Time Zone" length="1" offset="479" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="caller_port_number" length="2" offset="480" fractionbit="0" separatedchunks="0" reversed="1" conversion="v" value="constant" date="0" bcd="0">
+</field>
+
+<field name="called_port_number" length="2" offset="482" fractionbit="0" separatedchunks="0" reversed="1" conversion="v" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Outgoing Traffic Dispersion ID" length="2" offset="484" fractionbit="0" separatedchunks="0" reversed="1" conversion="v" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Incoming Traffic Dispersion ID" length="2" offset="486" fractionbit="0" separatedchunks="0" reversed="1" conversion="v" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Calling_SS_during_the_call" length="7" offset="488" fractionbit="0" separatedchunks="0" reversed="1" conversion="string" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Teleservice" length="1" offset="495" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="UUS1 count" length="1" offset="496" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="UUS2 count" length="1" offset="497" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="UUS3 count" length="1" offset="498" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="post_delay_metering" length="2" offset="499" fractionbit="0" separatedchunks="0" reversed="1" conversion="v" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Packetization time" length="1" offset="501" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="fractionbit6" length="1" offset="502" fractionbit="1" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+        <fractiondef name="National/international call indicator" position="-1" bit="1">
+        </fractiondef>
+        <fractiondef name="End-to-end method indicator" position="-3" bit="2">
+        </fractiondef>
+	<fractiondef name="Interworking indicator" position="-4" bit="1">
+	</fractiondef>
+	<fractiondef name="End-to-end information indicator" position="-5" bit="1">
+	</fractiondef>
+	<fractiondef name="Spare" position="-6" bit="1">
+	</fractiondef>
+	<fractiondef name="ISDN user part preference indicator" position="-8" bit="2">
+	</fractiondef>
+</field>
+
+<field name="fractionbit7" length="1" offset="503" fractionbit="1" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+        <fractiondef name="SCCP method indicator" position="-2" bit="2">
+        </fractiondef>
+        <fractiondef name="f-b-7-Spare" position="-8" bit="6">
+        </fractiondef>
+</field>
+
+<field name="Packet loss" length="2" offset="504" fractionbit="0" separatedchunks="0" reversed="1" conversion="v" value="constant" date="0" bcd="0">
+</field>
+
+<field name="PSTN/ISDN indicator" length="1" offset="506" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="ISUP charge number indicator" length="1" offset="507" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="fractionbit8" length="1" offset="508" fractionbit="1" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+        <fractiondef name="Connected number type" position="-2" bit="2">
+        </fractiondef>
+        <fractiondef name="ISDN capability" position="-4" bit="2">
+        </fractiondef>
+        <fractiondef name="Time restricted flag" position="-5" bit="1">
+        </fractiondef>
+        <fractiondef name="Reverse" position="-8" bit="3">
+        </fractiondef>
+</field>
+
+<field name="fractionbit9" length="1" offset="509" fractionbit="1" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+        <fractiondef name="IN flag" position="-1" bit="1">
+        </fractiondef>
+        <fractiondef name="HongKong NP call flag" position="-2" bit="1">
+        </fractiondef>
+        <fractiondef name="charging_method" position="-4" bit="2">
+        </fractiondef>
+        <fractiondef name="incomplete_call_watch_type" position="-6" bit="2">
+        </fractiondef>
+        <fractiondef name="caller_ISDN_access" position="-7" bit="1">
+        </fractiondef>
+        <fractiondef name="called_ISDN_access" position="-8" bit="1">
+        </fractiondef>
+</field>
+
+<field name="fractionbit10" length="1" offset="510" fractionbit="1" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+        <fractiondef name="ISUP_indication" position="-1" bit="1">
+        </fractiondef>
+        <fractiondef name="B_num" position="-6" bit="5">
+        </fractiondef>
+        <fractiondef name="Caller_CLIR_flag" position="-7" bit="1">
+        </fractiondef>
+        <fractiondef name="international transit call indicator" position="-8" bit="1">
+        </fractiondef>
+</field>
+
+<field name="release_index" length="2" offset="511" fractionbit="0" separatedchunks="0" reversed="1" conversion="string" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Billed_party" length="1" offset="513" fractionbit="0" separatedchunks="0" definition="1" conversion="C" value="constant" date="0" bcd="0">
+	<valuedef value='0'>Local call</valuedef>
+	<valuedef value='1'>Use collected call</valuedef>
+	<valuedef value='2'>No billed calls</valuedef>
+</field>
+
+<field name="fractionbit11" length="1" offset="514" fractionbit="1" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+        <fractiondef name="Service ID" position="-6" bit="6">
+        </fractiondef>
+        <fractiondef name="MCE" position="-8" bit="2">
+        </fractiondef>
+</field>
+
+<field name="IP release cause" length="2" offset="515" fractionbit="0" separatedchunks="0" reversed="1" conversion="v" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Caller equipment type" length="1" offset="517" fractionbit="0" separatedchunks="0" definition="1" conversion="C" value="constant" date="0" bcd="0">
+	<valuedef value='0'>IAD</valuedef>
+	<valuedef value='1'>AG</valuedef>
+	<valuedef value='2'>TG</valuedef>
+	<valuedef value='3'>UMG</valuedef>
+	<valuedef value='4'>H.323</valuedef>
+	<valuedef value='5'>SIP</valuedef>
+</field>
+
+<field name="org_called_dnset" length="2" offset="518" fractionbit="0" separatedchunks="0" reversed="1" conversion="v" value="constant" date="0" bcd="0">
+</field>
+
+<field name="org_called_address_nature" length="1" offset="520" fractionbit="0" separatedchunks="0" definition="1" conversion="C" value="constant" date="0" bcd="0">
+	<valuedef value='0'>subscriber number</valuedef>
+	<valuedef value='2'>domestic valid number</valuedef>
+	<valuedef value='3'>international number</valuedef>
+	<valuedef value='7'>Reserved for extension</valuedef>
+	<valuedef value='255'>Unknown</valuedef>
+</field>
+
+<field name="org_number" length="16" offset="521" fractionbit="0" separatedchunks="0" bcd="1" conversion="bcd" value="constant" date="0">
+</field>
+
+<field name="redirecting_dnset" length="2" offset="537" fractionbit="0" separatedchunks="0" reversed="1" conversion="v" value="constant" date="0" bcd="0">
+</field>
+
+<field name="redirecting_address_nature" length="1" offset="539" fractionbit="0" separatedchunks="0" conversion="C" value="constant" definition="1" date="0" bcd="0">
+	<valuedef value='0'>subscriber number</valuedef>
+	<valuedef value='2'>domestic valid number</valuedef>
+	<valuedef value='3'>international number</valuedef>
+	<valuedef value='7'>Reserved for extension</valuedef>
+	<valuedef value='255'>Unknown</valuedef>
+</field>
+
+<field name="redirecting_number" length="16" offset="540" fractionbit="0" separatedchunks="0" bcd="1" conversion="bcd" value="constant" date="0">
+</field>
+
+<field name="SHLR_MON_Route" length="4" offset="556" fractionbit="0" separatedchunks="0" bcd="1" conversion="bcd" value="constant" date="0">
+</field>
+
+<field name="SHLR_MON_Operation" length="1" offset="560" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="fractionbit12" length="1" offset="561" fractionbit="1" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+        <fractiondef name="Caller WLL User Type" position="-4" bit="4">
+        </fractiondef>
+        <fractiondef name="Called WLL User Type" position="-8" bit="4">
+        </fractiondef>
+</field>
+
+<field name="Caller WLL Home Area Information" length="5" offset="562" fractionbit="0" separatedchunks="0" reveresed="1" conversion="string" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Caller WLL Visit Area Information" length="5" offset="567" fractionbit="0" separatedchunks="0" reveresed="1" conversion="string" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Called WLL Home Area Information" length="5" offset="572" fractionbit="0" separatedchunks="0" reveresed="1" conversion="string" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Called WLL Visit Area Information" length="5" offset="577" fractionbit="0" separatedchunks="0" reveresed="1" conversion="string" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Outgoing Route Message Indicator" length="1" offset="582" fractionbit="0" separatedchunks="0" conversion="C" value="constant" definition="1" date="0" bcd="0">
+	<valuedef value='0'>National route</valuedef>
+	<valuedef value='1'>Transit Route</valuedef>
+	<valuedef value='2'>Terminating Route</valuedef>
+	<valuedef value='3'>Spare</valuedef>
+	<valuedef value='255'>Void value</valuedef>
+</field>
+
+<field name="Outgoing Trunk Group ID Number" length="2" offset="583" fractionbit="0" separatedchunks="0" reveresed="1" conversion="v" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Incoming Trunk Group ID Number" length="2" offset="585" fractionbit="0" separatedchunks="0" reveresed="1" conversion="v" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Reserved-587" length="1" offset="587" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="IN CallID" length="20" offset="588" fractionbit="0" separatedchunks="0" reveresed="1" conversion="string" value="constant" date="0" bcd="0">
+</field>
+
+<field name="(Originating Line Info, OLI)" length="1" offset="608" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="alerting time" length="6" offset="609" fractionbit="0" separatedchunks="0" date="1" conversion="sp" value="db" bcd="0">
+</field>
+
+<field name="fractionbit14" length="1" offset="615" fractionbit="1" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+        <fractiondef name="Caller number plan indicator" position="-3" bit="3">
+        </fractiondef>
+        <fractiondef name="Caller address presentation restricted indicator" position="-5" bit="2">
+        </fractiondef>
+        <fractiondef name="Caller screening indicator" position="-7" bit="2">
+        </fractiondef>
+        <fractiondef name="Reserved-615" position="-8" bit="1">
+        </fractiondef>
+</field>
+
+<field name="fractionbit15" length="1" offset="616" fractionbit="1" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+        <fractiondef name="Called number plan indicator" position="-3" bit="3">
+        </fractiondef>
+        <fractiondef name="Redirecting  number plan indicator" position="-6" bit="3">
+        </fractiondef>
+        <fractiondef name="Redirecting  address presentation restricted indicator" position="-8" bit="2">
+        </fractiondef>
+</field>
+
+<field name="fractionbit16" length="1" offset="617" fractionbit="1" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+        <fractiondef name="Original called  number plan indicator" position="-3" bit="3">
+        </fractiondef>
+        <fractiondef name="Original called address presentation restricted indicator" position="-5" bit="2">
+        </fractiondef>
+        <fractiondef name="H223-H245_Indicator" position="-8" bit="3">
+        </fractiondef>
+</field>
+
+<field name="Reserved-618" length="2" offset="618" fractionbit="0" separatedchunks="0" reveresed="1" conversion="string" value="constant" date="0" bcd="0">
+</field>
+
+<field name="local dnset of caller physical number" length="2" offset="620" fractionbit="0" separatedchunks="0" reveresed="1" conversion="v" value="constant" date="0" bcd="0">
+</field>
+
+<field name="address nature of caller physical number" length="1" offset="622" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="caller physical number" length="16" offset="623" fractionbit="0" separatedchunks="0" bcd="1" conversion="bcd" value="db" date="0">
+</field>
+
+<field name="local dnset of callee physical number" length="2" offset="639" fractionbit="0" separatedchunks="0" reveresed="1" conversion="v" value="constant" date="0" bcd="0">
+</field>
+
+<field name="address nature of callee physical number" length="1" offset="641" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="callee physical number" length="16" offset="642" fractionbit="0" separatedchunks="0" bcd="1" conversion="bcd" value="db" date="0">
+</field>
+
+<field name="local dnset of redirecting physical number" length="2" offset="658" fractionbit="0" separatedchunks="0" reveresed="1" conversion="v" value="constant" date="0" bcd="0">
+</field>
+
+<field name="address nature of redirecting physical number" length="1" offset="660" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="redirecting physical number" length="16" offset="661" fractionbit="0" separatedchunks="0" bcd="1" conversion="bcd" value="constant" date="0">
+</field>
+
+<field name="local dnset of MON caller physical number" length="2" offset="677" fractionbit="0" separatedchunks="0" reveresed="1" conversion="v" value="constant" date="0" bcd="0">
+</field>
+
+<field name="address nature of MON caller physical number" length="1" offset="679" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="MON caller physical number" length="16" offset="680" fractionbit="0" separatedchunks="0" bcd="1" conversion="bcd" value="constant" date="0">
+</field>
+
+<field name="local dnset of MON callee physical number" length="2" offset="696" fractionbit="0" separatedchunks="0" reveresed="1" conversion="v" value="constant" date="0" bcd="0">
+</field>
+
+<field name="address nature of MON callee physical number" length="1" offset="698" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="MON callee physical number" length="16" offset="699" fractionbit="0" separatedchunks="0" bcd="1" conversion="bcd" value="constant" date="0">
+</field>
+
+<field name="caller_module" length="1" offset="715" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="called_module" length="1" offset="716" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Bearer Mode" length="1" offset="717" fractionbit="0" separatedchunks="0" definition="1" conversion="C" value="constant" date="0" bcd="0">
+	<valuedef value='0'>Non Standard</valuedef>
+	<valuedef value='1'>Video Mode</valuedef>
+	<valuedef value='2'>Audio Mode</valuedef>
+	<valuedef value='3'>Application Mode</valuedef>
+	<valuedef value='4'>Data Mode</valuedef>
+	<valuedef value='5'>Encryption Mode</valuedef>
+	<valuedef value='255'>Unknown</valuedef>
+</field>
+
+<field name="audio codec type" length="1" offset="718" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="video codec type" length="1" offset="719" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Max Bit Rate" length="2" offset="720" fractionbit="0" separatedchunks="0" reversed="1" conversion="v" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Conference ID" length="4" offset="722" fractionbit="0" separatedchunks="0" reversed="1" conversion="V" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Tone type" length="1" offset="726" fractionbit="0" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Global Call Reference" length="20" offset="727" fractionbit="0" separatedchunks="0" conversion="string" value="constant" date="0" bcd="0">
+</field>
+
+<field name="fractionbit17" length="1" offset="747" fractionbit="1" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+        <fractiondef name="AEC" position="-1" bit="1">
+        </fractiondef>
+        <fractiondef name="NC" position="-2" bit="1">
+        </fractiondef>
+        <fractiondef name="NR" position="-4" bit="2">
+        </fractiondef>
+        <fractiondef name="AGC" position="-6" bit="2">
+        </fractiondef>
+        <fractiondef name="SSPARE" position="-8" bit="2">
+        </fractiondef>
+</field>
+
+<field name="Rate-filler" length="4" offset="748" fractionbit="0" separatedchunks="0" conversion="V" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Rate" length="4" offset="752" fractionbit="0" separatedchunks="0" reversed="1" conversion="V" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Fee-filler" length="4" offset="756" fractionbit="0" separatedchunks="0" conversion="V" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Fee" length="4" offset="760" fractionbit="0" separatedchunks="0" reversed="1" conversion="V" value="constant" date="0" bcd="0">
+</field>
+
+<field name="The first service access code from SHLR" length="4" offset="764" fractionbit="0" separatedchunks="0" reversed="1" bcd="1" conversion="bcd" value="constant" date="0">
+</field>
+
+<field name="fractionbit18" length="1" offset="768" fractionbit="1" separatedchunks="0" conversion="C" value="constant" date="0" bcd="0">
+        <fractiondef name="Routing_Attempt_Count" position="-4" bit="4">
+        </fractiondef>
+        <fractiondef name="Reserved-18" position="-4" bit="4">
+        </fractiondef>
+</field>
+
+<field name="Reserve-769" length="10" offset="769" fractionbit="0" separatedchunks="0" reversed="1" conversion="string" value="constant" date="0" bcd="0">
+</field>
+
+<field name="Caller_call_id" length="64" offset="779" fractionbit="0" separatedchunks="0" conversion="string" value="db" date="0" bcd="0">
+</field>
+
+<field name="Called_call_id" length="64" offset="843" fractionbit="0" separatedchunks="0" conversion="string" value="db" date="0" bcd="0">
+</field>
+
+</huaweicdrdef>

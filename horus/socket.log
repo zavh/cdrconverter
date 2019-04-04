@@ -1,0 +1,88 @@
+{"Voltage":"236.76","Current":"1.07","Power":"252.97","Temperature":"29.06"}{"Voltage":"236.78","Current":"0.81","Power":"184.80","Temperature":"29.19"}{"Voltage":"236.66","Current":"0.82","Power":"180.54","Temperature":"29.06"}
+{"Voltage":"236.73","Current":"0.82","Power":"180.22","Temperature":"29.06"}
+{"Voltage":"236.85","Current":"0.70","Power":"157.01","Temperature":"29.06"}
+{"Voltage":"236.83","Current":"0.70","Power":"149.66","Temperature":"28.81"}
+{"Voltage":"235.01","Current":"0.69","Power":"148.79","Temperature":"28.63"}
+{"Voltage":"236.62","Current":"0.70","Power":"151.10","Temperature":"28.50"}
+At 2019-03-14 17:37:53 : {"Voltage":"233.44","Current":"1.05","Power":"230.3
+At 2019-03-14 17:38:05 : {"Voltage":"233.32","Current":"1.06","Power":"228.7
+At 2019-03-14 17:39:07 : {"Voltage":"235.03","Current":"1.06","Power":"242.1
+At 2019-03-14 17:40:06 : {"Voltage":"232.72","Current":"1.05","Power":"223.66","Temperature":"29.06"}
+At 2019-03-14 17:41:03 : {"Voltage":"233.25","Current":"1.05","Power":"227.23","Temperature":"29.19"}
+At 2019-03-14 17:42:05 : {"Voltage":"233.52","Current":"1.06","Power":"228.27","Temperature":"29.13"}
+At 2019-03-16 05:28:20 :
+At 2019-03-16 05:29:05 :
+At 2019-03-16 05:30:04 :
+At 2019-03-16 05:31:04 :
+At 2019-03-16 05:32:05 :
+At 2019-03-16 05:33:04 :
+At 2019-03-16 05:34:04 :
+At 2019-03-16 05:35:04 :
+At 2019-03-16 05:36:04 :
+At 2019-03-16 05:37:05 :
+At 2019-03-16 05:38:04 :
+At 2019-03-16 05:39:04 :
+At 2019-03-16 05:40:05 :
+At 2019-03-16 05:41:04 :
+At 2019-03-16 05:42:04 :
+At 2019-03-16 05:43:05 :
+At 2019-03-16 05:44:04 :
+At 2019-03-16 05:45:04 :
+At 2019-03-16 05:46:05 :
+At 2019-03-16 05:47:04 :
+At 2019-03-16 05:48:04 :
+At 2019-03-16 06:17:09 :
+REMOTE HI_SRDK_DEV_GetHddInfo MCTP/1.0
+CSeq:207
+Accept:text/HDP
+Content-Type:text/HDP
+Func-Version:0x10
+Content-Length:15
+
+Segment-Num:0
+At 2019-03-18 09:06:04 : {"Voltage":"225.49","Current":"0.39","Power":"50.82","Temperature":"28.06"}
+At 2019-03-18 09:07:06 : {"Voltage":"215.45","Current":"0.40","Power":"55.58","Temperature":"28.06"}
+At 2019-03-18 09:08:06 : {"Voltage":"223.60","Current":"0.40","Power":"54.39","Temperature":"28.00"}
+At 2019-03-18 09:09:06 : {"Voltage":"226.79","Current":"0.40","Power":"57.70","Temperature":"28.00"}
+At 2019-03-18 09:10:05 : {"Voltage":"226.67","Current":"0.40","Power":"53.39","Temperature":"28.06"}
+At 2019-03-18 09:11:05 : {"Voltage":"226.41","Current":"0.40","Power":"51.56","Temperature":"28.13"}
+At 2019-03-18 09:12:05 : {"Voltage":"226.30","Current":"0.40","Power":"51.54","Temperature":"28.06"}
+At 2019-03-18 09:13:04 : {"Voltage":"226.35","Current":"0.40","Power":"51.59","Temperature":"28.00"}
+At 2019-03-18 09:14:04 : {"Voltage":"225.94","Current":"0.40","Power":"49.97","Temperature":"28.00"}
+At 2019-03-18 09:15:06 : {"Voltage":"224.22","Current":"0.40","Power":"52.06","Temperature":"28.06"}
+At 2019-03-18 09:16:03 : {"Voltage":"225.74","Current":"0.40","Power":"51.70","Temperature":"28.06"}
+At 2019-03-18 09:17:06 : {"Voltage":"226.27","Current":"0.39","Power":"51.76","Temperature":"28.06"}
+At 2019-03-18 09:18:06 : {"Voltage":"225.55","Current":"0.39","Power":"55.02","Temperature":"28.06"}
+At 2019-03-18 09:19:05 : {"Voltage":"225.64","Current":"0.39","Power":"49.75","Temperature":"28.06"}
+At 2019-03-18 09:20:05 : {"Voltage":"225.56","Current":"0.52","Power":"74.16","Temperature":"28.00"}
+At 2019-03-18 09:21:04 : {"Voltage":"225.15","Current":"0.52","Power":"71.35","Temperature":"28.00"}
+At 2019-03-18 09:22:04 : {"Voltage":"225.39","Current":"0.52","Power":"70.73","Temperature":"27.94"}
+At 2019-03-18 09:23:07 : {"Voltage":"224.92","Current":"0.52","Power":"75.88","Temperature":"28.00"}
+At 2019-03-18 09:25:06 : {"Voltage":"225.08","Current":"0.52","Power":"75.28","Temperature":"28.13"}
+At 2019-03-18 09:26:01 :
+At 2019-03-18 09:26:06 : {"Voltage":"225.42","Current":"0.52","Power":"73.45","Temperature":"28.13"}
+At 2019-03-18 09:27:05 : {"Voltage":"225.14","Current":"0.53","Power":"73.06","Temperature":"28.06"}
+At 2019-03-18 09:28:05 : {"Voltage":"225.14","Current":"0.52","Power":"76.61","Temperature":"28.00"}
+At 2019-03-18 09:29:04 : {"Voltage":"225.01","Current":"0.53","Power":"75.52","Temperature":"28.00"}
+At 2019-03-18 09:30:04 : {"Voltage":"225.07","Current":"0.53","Power":"76.98","Temperature":"28.06"}
+At 2019-03-18 09:31:07 : {"Voltage":"224.91","Current":"0.53","Power":"77.24","Temperature":"28.13"}
+At 2019-03-18 09:32:06 : {"Voltage":"226.96","Current":"0.52","Power":"78.48","Temperature":"28.06"}
+At 2019-03-18 09:33:06 : {"Voltage":"228.18","Current":"0.53","Power":"77.21","Temperature":"28.06"}
+At 2019-03-18 09:34:05 : {"Voltage":"225.53","Current":"0.53","Power":"74.91","Temperature":"28.06"}
+At 2019-03-18 09:35:05 : {"Voltage":"225.38","Current":"0.53","Power":"74.44","Temperature":"28.06"}
+At 2019-03-18 09:36:05 : {"Voltage":"225.17","Current":"0.52","Power":"73.69","Temperature":"28.13"}
+At 2019-03-18 09:37:04 : {"Voltage":"225.12","Current":"0.52","Power":"72.01","Temperature":"28.13"}
+At 2019-03-18 09:38:06 : {"Voltage":"225.05","Current":"0.52","Power":"75.10","Temperature":"28.06"}
+At 2019-03-18 09:39:06 : {"Voltage":"223.67","Current":"0.52","Power":"76.71","Temperature":"28.06"}
+At 2019-03-18 09:40:06 : {"Voltage":"225.85","Current":"0.52","Power":"71.85","Temperature":"28.06"}
+At 2019-03-18 09:41:05 : {"Voltage":"225.67","Current":"0.71","Power":"147.01","Temperature":"28.06"}
+At 2019-03-18 09:42:04 : {"Voltage":"225.48","Current":"0.71","Power":"143.64","Temperature":"28.25"}
+At 2019-03-18 09:43:03 : {"Voltage":"225.63","Current":"0.71","Power":"145.96","Temperature":"28.38"}
+At 2019-03-18 09:44:05 : {"Voltage":"225.60","Current":"0.73","Power":"146.59","Temperature":"28.63"}
+At 2019-03-18 09:45:05 : {"Voltage":"225.32","Current":"0.72","Power":"145.07","Temperature":"28.50"}
+At 2019-03-18 09:46:04 : {"Voltage":"225.39","Current":"0.71","Power":"147.42","Temperature":"28.56"}
+At 2019-03-18 09:47:06 : {"Voltage":"225.41","Current":"0.72","Power":"148.02","Temperature":"28.56"}
+At 2019-03-18 09:48:05 : {"Voltage":"225.11","Current":"0.72","Power":"141.30","Temperature":"28.63"}
+At 2019-03-18 09:49:04 : {"Voltage":"224.93","Current":"0.72","Power":"147.25","Temperature":"28.69"}
+At 2019-03-18 09:50:04 : {"Voltage":"225.04","Current":"0.72","Power":"151.54","Temperature":"28.69"}
+Could not read data
